@@ -859,6 +859,8 @@ button.top_shoe_cart {
     height: 36px;
     background: rgba(27, 25, 25, 0.27);
     border: 1px solid rgba(27, 25, 25, 0.27);
+    position: fixed;
+
 }
 .shop_inner_inf {
     width: 90%;
