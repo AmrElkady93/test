@@ -244,7 +244,7 @@ li.dropdown.act a.w3_icons_act {
 /*-- /search --*/
 
 .cd-header-buttons {
-    position: fixed;
+    position: absolute;
     display: inline-block;
     top: 47px;
     right: 196px;

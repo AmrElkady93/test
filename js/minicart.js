@@ -2296,7 +2296,7 @@
                     if (this.get('item_number') === data.item_number) {
                         if (this.get('amount') === parser.amount(data.amount)) {
                             var i = 0;
-
+                            
                             match = true;
 
                             while (typeof data['os' + i] !== 'undefined') {
@@ -2304,7 +2304,7 @@
                                     match = false;
                                     break;
                                 }
-
+                                
                                 i++;
                             }
                         }

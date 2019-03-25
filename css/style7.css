@@ -20,7 +20,7 @@
     top: 20px;
     overflow: hidden;
     background: none;
-    color: #100f0f;
+    color: #fb1100;
     border: 1px solid #dcddde;
 }
 
@@ -135,7 +135,7 @@ body {
 .overlay-contentpush.open {
 	visibility: visible;
 	-webkit-transform: translateX(0%);
-	transform: translateX(0%);
+	transform: translateX(100%);
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 
@@ -163,3 +163,13 @@ body {
 		line-height: 2em;
 	}
 }
+
+
+
+
+
+
+#right {
+    float:right;
+    width:1200px;
+   }
