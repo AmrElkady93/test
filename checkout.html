@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h3>Chec<span>kout</span></h3>
 
 				<div class="checkout-right">
-					<h4>Your shopping cart contains: <span>3 Products</span></h4>
+					<!--<h4>Your shopping cart contains: <span>3 Products</span></h4> -->
 					<table class="timetable_sub">
 						<thead>
 							<tr>
@@ -415,6 +415,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!--quantity-->
+
+	
 	<script>
 		$(document).ready(function (c) {
 			$('.close1').on('click', function (c) {
@@ -424,11 +426,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		});
 	</script>
+
 	<script>
 		$(document).ready(function (c) {
-			$('.close2').on('click', function (c) {
-				$('.rem2').fadeOut('slow', function (c) {
-					$('.rem2').remove();
+			$('.close').on('click', function (c) {
+				$(this).parent().parent().parent().fadeOut('slow', function (c) {
+					$(this).remove();
 				});
 			});
 		});
@@ -441,7 +444,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			});
 		});
+
 	</script>
+
+	
 
 	<!-- start-smoth-scrolling -->
 	<script type="text/javascript" src="js/move-top.js"></script>

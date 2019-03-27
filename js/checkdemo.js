@@ -1,5 +1,5 @@
 function displayTable() {
-    var products = JSON.parse(localStorage.getItem("cart"));
+
     var table = "" //draw
     for (var i = 0; i < products.length; i++)
     {
@@ -9,23 +9,11 @@ function displayTable() {
 <div class=\"entry value-minus\">&nbsp;</div>\n\
 <div class=\"entry value\"><span>" + products[i].quantity + "</span></div>\n\
 <div class=\"entry value-plus active\">&nbsp;</div></div></div>\n\
-</td><td class=\"invert\">" + products[i].name + "</td><td class=\"invert\">" + products[i].price + "</td><td onclick=\"deleteRow(this)\" ; class=\"invert\"><div class=\"rem\"><div class=\"close" + (i + 1) + "\"></div></div></td></tr>";
-
-        //add remove action 
-        $(document).ready(function (c) {
-            var close = ".close" + (i + 1);
-            var rem = ".rem" + (i + 1);
-            $(close).on('click', function (c) {
-                $(rem).fadeOut('slow', function (c) {
-                    $(rem).remove();
-                });
-            });
-        });
-
-
+</td><td class=\"invert\">" + products[i].name + "</td><td class=\"invert\">" + products[i].price + "</td><td  ; class=\"invert\"><div class=\"rem\"><div  onclick=\"deleteRow(this)\" class=\"close\"  id=\"row"+(i+1)+"\"></div></div></td></tr>";
 
 
     }
+
     document.getElementById("drawid").innerHTML = table;
 
     //add puls button
@@ -50,9 +38,38 @@ function displayTable() {
     });
 }
 
+
+
+
+var products = JSON.parse(localStorage.getItem("cart"));
+
+for (var i = 0; i < products.length; i++)
+{
+
+
+    //add remove action 
+    $(document).ready(function (c) {
+        var close = ".close" + (i + 1);
+        var rem = ".rem" + (i + 1);
+        $(close).on('click', function (c) {
+            $(rem).fadeOut('slow', function (c) {
+                $(rem).remove();
+            });
+        });
+    });
+
+}
+
+
+
 //delete product from cart 
 function deleteRow(r) {
-    var i = r.parentNode.parentNode.rowIndex;
+    //var i = r.parentNode.parentNode.parentNode.index();
+    //var parent = this.parent().closest('td').attr("class");
+    var classname = $(r).attr('id');
+    //alert(classname);
+    var i = $('#' + classname).parent().parent().parent().index()//.parent().closest('td').attr('class'));
+   // alert(i);
     products = JSON.parse(localStorage.getItem("cart"));
     products.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(products));
@@ -65,6 +82,8 @@ function ChangeQuntity(index, newVal) {
     localStorage.setItem('cart', JSON.stringify(products));
 
 }
+
+
 
 
 window.onload = displayTable();
